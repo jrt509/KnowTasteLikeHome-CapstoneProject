@@ -14,7 +14,7 @@ export default class Body extends Component {
     render() {
         return (
             <div className='body-wrapper'>
-               
+                
             </div>
         )
     }

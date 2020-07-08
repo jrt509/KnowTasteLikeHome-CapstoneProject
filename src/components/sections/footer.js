@@ -12,9 +12,9 @@ export default class Footer extends Component {
     render() {
         return (
             <div className='footer-wrapper'>
-                <i class="fab fa-pinterest"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-twitter"></i>
+                <i className="fab fa-pinterest"></i>
+                <i className="fab fa-facebook"></i>
+                <i className="fab fa-twitter"></i>
             </div>
         )
     }
