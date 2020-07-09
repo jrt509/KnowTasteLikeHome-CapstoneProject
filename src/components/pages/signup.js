@@ -1,35 +1,90 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Header from '../sections/header.js';
+import Footer from '../sections/footer.js';
 
 export default class Signup extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            
+            authentication: "login",
+            firstName: "",
+            lastName: "",
+            userName: "",
+            password: "",
+            email: ""
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSignup = this.handleSignup.bind(this);
     }
-
+    handleChange() {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+    handleSignup = event => {
+        event.preventDefault()
+        console.log(this.state)
+    }
+    handleClick() {
+        this.setState({
+            authentication: this.state.authMethod === "login" ? "signup" : "login", 
+            firstName: "",
+            lastName: "",
+            username: "",
+            password: "",
+            email: ""
+        })
+    }
     render() {
         return (
             <div className='signup-wrapper'>
-                 <div className='left-header-column'>
-                    <div className='logo-wrapper'>
-                        <div className='logo-top'>Know Taste</div>
-                        <div className='logo-middle'><i className="fas fa-utensils"></i></div>
-                        <div className='logo-bottom'>Like Home</div>
-                    </div>
-                </div>
-                <div className='right-header-column'>
-                    <div className='login'>
-                        <button>Log In</button>
-                    </div>
-                </div>
-                <div className='footer-wrapper'>
-                    <i className="fab fa-pinterest"></i>
-                    <i className="fab fa-facebook"></i>
-                    <i className="fab fa-twitter"></i>
-                </div>
-                
+                <Header />
+               <form className='form-wrapper'>
+                   <input name="firstName" 
+                          type="text" 
+                          placeholder="First Name" 
+                          value={this.state.firstName} 
+                          onChange={this.handleChange}>
+                   </input>
+                    <br />
+
+                   <input name="lastName" 
+                          type="text" 
+                          placeholder="Last Name" 
+                          value={this.state.lastName} 
+                          onChange={this.handleChange}>
+                   </input>
+                   <br />
+                   
+                   <input name="userName" 
+                          type="text" 
+                          placeholder="Username" 
+                          value={this.state.userName} 
+                          onChange={this.handleChange}>
+                   </input>
+                   <br />
+                   
+                   <input name="password" 
+                          type="password" 
+                          placeholder="Password" 
+                          value={this.state.password} 
+                          onChange={this.handleChange}>
+                   </input>
+                   <br />
+                    
+                   <input name="email" 
+                          type="email" 
+                          placeholder="Email" 
+                          value={this.state.email} 
+                          onChange={this.handleChange}>
+                   </input>
+                   <br />
+                    
+                   <button onClick={this.handleSignup}>Submit</button>
+                   
+               </form>
+               <Footer />
             </div>
         )
     }

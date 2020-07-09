@@ -1,7 +1,44 @@
 .body-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100vw;
     background-color: rgb(224, 224, 224);
+    
 
+    img {
+        height: 60%;
+        width: 45%;
+        position: absolute;
+        z-index: 1;
+
+        
+
+    }
+
+    .logo-on-book {
+        font-size: 3em;
+        position: absolute;
+        z-index: 2;
+
+        
+        .logo-wrapper {
+            display: grid;
+            grid-template-rows: 1fr 2fr 1fr;
+            justify-items: center;
+            align-items: center;
+
+           
+            .logo-middle {
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+                font-size: 2em; 
+            }
+        }
+
+
+        
+    }
     
 }
