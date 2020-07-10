@@ -33,7 +33,7 @@ export default class Signup extends Component {
             lastName: "",
             username: "",
             password: "",
-            email: ""
+            confirmPassword: ""
         })
     }
     render() {
@@ -47,7 +47,7 @@ export default class Signup extends Component {
                           value={this.state.firstName} 
                           onChange={this.handleChange}>
                    </input>
-                    <br />
+                   
 
                    <input name="lastName" 
                           type="text" 
@@ -55,15 +55,14 @@ export default class Signup extends Component {
                           value={this.state.lastName} 
                           onChange={this.handleChange}>
                    </input>
-                   <br />
-                   
+                  
                    <input name="userName" 
                           type="text" 
                           placeholder="Username" 
                           value={this.state.userName} 
                           onChange={this.handleChange}>
                    </input>
-                   <br />
+                  
                    
                    <input name="password" 
                           type="password" 
@@ -71,16 +70,15 @@ export default class Signup extends Component {
                           value={this.state.password} 
                           onChange={this.handleChange}>
                    </input>
-                   <br />
+                  
                     
-                   <input name="email" 
-                          type="email" 
-                          placeholder="Email" 
-                          value={this.state.email} 
+                   <input name="confirmPassword" 
+                          type="password" 
+                          placeholder="Confirm Password" 
+                          value={this.state.confirmPassword} 
                           onChange={this.handleChange}>
                    </input>
-                   <br />
-                    
+                  
                    <button onClick={this.handleSignup}>Submit</button>
                    
                </form>

@@ -1,3 +1,32 @@
 .signup-wrapper {
     @include basicStyles();
+
+    .form-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        width: 100vw;
+        background-color: rgb(224, 224, 224);
+        
+
+        input {
+
+            height: 23px;
+            width: 30vw;
+            margin-top: 10px;
+            border-radius: .3em;
+            
+
+           
+        }
+        button {
+            height: 20px;
+            width: 100px;
+            background-color: #c54b26;
+            color: white;
+        }
+        
+       
+        
+    }
 }
