@@ -12,7 +12,8 @@ export default class Signup extends Component {
             lastName: "",
             userName: "",
             password: "",
-            email: ""
+            error: "none"
+           
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSignup = this.handleSignup.bind(this);
@@ -24,16 +25,34 @@ export default class Signup extends Component {
     }
     handleSignup = event => {
         event.preventDefault()
-        console.log(this.state)
+
+        fetch("http://127.0.0.1:5000/", {
+            method: "Post",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                userName: this.state.userName,
+                password: this.state.password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => {
+            console.log(error)
+            this.setState({ error: "fetch error"})
+        })
     }
     handleClick() {
         this.setState({
-            authentication: this.state.authMethod === "login" ? "signup" : "login", 
+            authentication: this.state.authentication === "login" ? "signup" : "login", 
             firstName: "",
             lastName: "",
             username: "",
-            password: "",
-            confirmPassword: ""
+            password: ""
+            
         })
     }
     render() {
@@ -68,14 +87,6 @@ export default class Signup extends Component {
                           type="password" 
                           placeholder="Password" 
                           value={this.state.password} 
-                          onChange={this.handleChange}>
-                   </input>
-                  
-                    
-                   <input name="confirmPassword" 
-                          type="password" 
-                          placeholder="Confirm Password" 
-                          value={this.state.confirmPassword} 
                           onChange={this.handleChange}>
                    </input>
                   
