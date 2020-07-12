@@ -14,11 +14,11 @@ export default class  extends Component {
 
     render() {
         return (
-            <div className=''>
+            <div className='home-page-wrapper'>
                 <input name="title" type="text" placeholder="title" value={this.state.title}></input>
                 <textarea name="ingredients" type="text" placeholder="enter ingredients" value={this.state.ingredients}></textarea>
                 <textarea name="preperation" type="text" placeholder="enter preperation" value={this.state.preperation}></textarea>
-                
+            <Footer />    
             </div>
         )
     }

@@ -1,6 +1,6 @@
 @mixin basicStyles {
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     display: grid;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 5fr 1fr;
 }

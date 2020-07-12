@@ -4,13 +4,19 @@ import HomePage from './homepage.js';
 import Login from './login.js';
 import Signup from './signup.js';
 import Recipes from './recipes.js';
-
+import Logo from '../sections/logo'
+;
 
 export default function navigation(props) {
+
+
   return (
         <div className='nav-link-wrapper'>
+           
             <BrowserRouter>
+            
                 <ul>
+                <Logo />    
                     <li>
                         <NavLink exact to="/">Home</NavLink>
                     </li>

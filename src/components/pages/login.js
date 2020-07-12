@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../sections/header.js';
 import Footer from '../sections/footer.js';
 
 
@@ -28,6 +27,8 @@ export default class Login extends Component {
                           placeholder="Password" 
                           value={this.state.password} 
                           onChange={this.handleChange}></input>
+
+                <Footer />
             </div>
         )
     }

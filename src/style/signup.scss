@@ -2,11 +2,13 @@
     @include basicStyles();
 
     .form-wrapper {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         width: 100vw;
         background-color: rgb(224, 224, 224);
+       
         
 
         input {

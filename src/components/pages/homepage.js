@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../sections/header.js';
 import Body from '../sections/body.js';
 import Footer from '../sections/footer.js';
 
@@ -17,7 +16,7 @@ export default class HomePage extends Component {
         return (
             <div className='home-page-wrapper'>
             
-                <Header />
+               
                 <Body />
                 <Footer />
                

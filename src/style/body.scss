@@ -5,6 +5,10 @@
     height: 100%;
     width: 100vw;
     background-color: rgb(224, 224, 224);
+
+    p { 
+        margin-left: 15px;
+    }
     
     .carousel-wrapper {
         display: flex;
@@ -12,7 +16,10 @@
         align-items: center;
         height: 60%;
         width: 60%;
+        margin-right: 15px;
+        border: 12px solid darkgray;
 
+       
     }
 
  

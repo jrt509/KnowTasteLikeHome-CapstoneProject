@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../sections/header.js';
 import Footer from '../sections/footer.js';
 
 export default class Signup extends Component {
@@ -58,7 +57,6 @@ export default class Signup extends Component {
     render() {
         return (
             <div className='signup-wrapper'>
-                <Header />
                <form className='form-wrapper'>
                    <input name="firstName" 
                           type="text" 
