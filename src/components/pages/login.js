@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Footer from '../sections/footer.js';
+import Signup from '../pages/signup';
 
 
 
@@ -9,49 +10,43 @@ export default class Login extends Component {
         super(props)
 
         this.state = {
-            username: "",
-            password: "",
-            
+           
     }
-    this.handleChange = this.handleChange.bind(this)
-    
-}
-handleLogin = event => {
-    event.preventDefault()
-    
-    console.log(this.state.userName)
-    console.log(this.state.password)
 }
 
-handleChange(event) {
-    this.setState({
-        [event.target.name]: event.target.value
-        })
-    } 
-
-    render() {
+render() {
         return (
-            
-            <div className='login-wrapper'>
+            <form onSubmit={this.handleSubmit}>
+                
+                <div className='login-wrapper'>
+                
                 <div className="input-wrapper">
-                <input name="userName" 
+                <input 
+                    name="userName" 
                     type="text" 
                     placeholder="Username" 
-                    value={this.state.userName} 
-                    onChange={this.handleChange}>
+                    value={this.props.userName} 
+                    onChange={this.props.handleChange}>
                 </input>
-                <input name="password" 
+                <input 
+                    name="password" 
                     type="password" 
                     placeholder="Password" 
-                    value={this.state.password} 
-                    onChange={this.handleChange}>
+                    value={this.props.password} 
+                    onChange={this.props.handleChange}>
                 </input>
-                <button onClick={this.handleLogin}>Log In</button>
+
+                <button type="submit" onClick={this.handleSubmit}>Log In</button>
                 </div>
-               
-                <Footer />
                 
-            </div>
+                <Footer />
+                </div>
+            </form>
+           
+               
+                
+                
+        
         )
     }
 }

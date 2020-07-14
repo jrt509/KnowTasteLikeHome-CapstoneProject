@@ -16,8 +16,7 @@ export default class Navigation extends Component {
 
         
         this.state = {
-            username: "",
-            password: "",
+         
            
     }
 }  

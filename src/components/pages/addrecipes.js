@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Footer from '../sections/footer'
+import Signup from '../pages/signup'
 
 export default class  extends Component {
     constructor(props) {
@@ -14,41 +15,23 @@ export default class  extends Component {
         this.handleAddRecipe = this.handleAddRecipe.bind(this)
         
     }
-    handleAddRecipe = event => {
-        event.preventDefault()
-
-        fetch("http://127.0.0.1:5000/user/add", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({
-                title: this.state.title,
-                ingredients: this.state.ingredients,
-                preperation: this.state.preperation,
-                
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-        })
-        .catch(error => {
-            console.log(error)
-            this.setState({ error: "fetch error"})
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
         })
     }
-    
-    
+    handleAddRecipe = event => {
+        console.log("title", "ingredients", "preperation")
+        event.preventDefault()
 
-   
-    handleChange(event) {
-        this.setState({ 
-            [event.target.name]: event.target.value
-    })
-}
+    }    
+
     render() {
         return (
             <div className='add-recipe-page-wrapper'>
-                <div className="content-wrapper">
+                <form onSubmit={this.props.handleSubmit} className="content-wrapper">
+                
+               
                     <input 
                         name="title" 
                         type="text" 
@@ -72,10 +55,12 @@ export default class  extends Component {
                         value={this.state.preperation}
                         onChange={this.handleChange}>
                     </textarea>
-                    <button onClick={this.props.handleSignup}>Add</button>
-                </div>
-               
-            <Footer />    
+                    <button onClick={this.props.handleSubmit}>Add</button>
+                    
+                
+                </form>     
+            <Footer /> 
+             
             </div>
         )
     }
