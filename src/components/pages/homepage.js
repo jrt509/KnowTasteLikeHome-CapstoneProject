@@ -16,7 +16,7 @@ export default class HomePage extends Component {
         return (
             <div className='home-page-wrapper'>
             
-               
+                
                 <Body />
                 <Footer />
                
