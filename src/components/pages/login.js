@@ -17,7 +17,7 @@ export default class Login extends Component {
 }
 handleLogin() {
     event.preventDefault()
-    fetch("http://127.0.0.1:5000/user/verification", {
+    fetch("http://127.0.0.1:5000/user/verified", {
             mode: "no-cors",
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -26,9 +26,9 @@ handleLogin() {
                 password: this.props.password
             })
         })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
 }
 
 render() {

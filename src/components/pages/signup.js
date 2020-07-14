@@ -49,7 +49,7 @@ export default class Signup extends Component {
     render() {
         return (
             <div className='signup-wrapper'>
-               <form onSubmit={this.handleSubmit} className='form-wrapper'>
+               <div className='form-wrapper'>
                    
                    <input name="firstName" 
                           type="text" 
@@ -89,9 +89,9 @@ export default class Signup extends Component {
                           >
                    </input>
                   
-                   <button type="submit"onClick={this.handleSignup}>Submit</button>
+                   <button type="submit" onClick={this.handleSignup}>Submit</button>
                    
-               </form>
+               </div>
                <Footer />
             </div>
         )
