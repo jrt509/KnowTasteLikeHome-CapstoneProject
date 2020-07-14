@@ -19,7 +19,7 @@ export default class Signup extends Component {
        
         this.handleChange = this.handleChange.bind(this)
         this.handleSignup = this.handleSignup.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        
     }
     handleChange(event) {
         this.setState({
@@ -29,17 +29,23 @@ export default class Signup extends Component {
 
     handleSignup = event => {
         event.preventDefault()
-        console.log(this.state.firstName)
-        console.log(this.state.lastName)
-        console.log(this.state.userName)
-        console.log(this.state.password)
         
+        fetch("http://127.0.0.1:5000/user/add", {
+            mode: "no-cors",
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                userName: this.state.userName,
+                password: this.state.password
+            })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
     }
-    handleSubmit(event) {
-        event.preventDefault()
-    } 
-   
-    
+        
     render() {
         return (
             <div className='signup-wrapper'>
@@ -49,7 +55,9 @@ export default class Signup extends Component {
                           type="text" 
                           placeholder="First Name" 
                           value={this.state.firstName} 
-                          onChange={this.handleChange}>
+                          onChange={this.handleChange}
+                          
+                          >
                    </input>
                    
 
@@ -57,14 +65,18 @@ export default class Signup extends Component {
                           type="text" 
                           placeholder="Last Name" 
                           value={this.state.lastName} 
-                          onChange={this.handleChange}>
+                          onChange={this.handleChange}
+                          
+                          >
                    </input>
                   
                    <input name="userName" 
                           type="text" 
                           placeholder="Username" 
                           value={this.state.userName} 
-                          onChange={this.handleChange}>
+                          onChange={this.handleChange}
+                          
+                          >
                    </input>
                   
                    
@@ -72,7 +84,9 @@ export default class Signup extends Component {
                           type="password" 
                           placeholder="Password" 
                           value={this.state.password} 
-                          onChange={this.handleChange}>
+                          onChange={this.handleChange}
+                          
+                          >
                    </input>
                   
                    <button type="submit"onClick={this.handleSignup}>Submit</button>

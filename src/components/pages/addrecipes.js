@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Footer from '../sections/footer'
 import Signup from '../pages/signup'
 
+
 export default class  extends Component {
     constructor(props) {
         super(props)
@@ -14,6 +15,7 @@ export default class  extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleAddRecipe = this.handleAddRecipe.bind(this)
         
+        
     }
     handleChange(event) {
         this.setState({
@@ -21,10 +23,22 @@ export default class  extends Component {
         })
     }
     handleAddRecipe = event => {
-        console.log("title", "ingredients", "preperation")
         event.preventDefault()
-
-    }    
+        fetch("http://127.0.0.1:5000/recipe/add", {
+            method: "POST",
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify({ 
+                title: this.state.title,
+                ingredients: this.state.ingredients,
+                preperation: this.state.preperation
+            })
+            
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))   
+    }
+    
 
     render() {
         return (
@@ -55,7 +69,7 @@ export default class  extends Component {
                         value={this.state.preperation}
                         onChange={this.handleChange}>
                     </textarea>
-                    <button onClick={this.props.handleSubmit}>Add</button>
+                    <button type="submit" onClick={this.handleAddRecipe}>Add</button>
                     
                 
                 </form>     
