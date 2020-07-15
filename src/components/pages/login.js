@@ -53,7 +53,7 @@ render() {
                     onChange={this.props.handleChange}>
                 </input>
 
-                <button type="submit" onClick={this.handleLogin}>Log In</button>
+                <button onClick={event => window.location.href='/myrecipes'}>Log In</button>
                 </div>
                 
                 <Footer />

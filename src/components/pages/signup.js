@@ -3,6 +3,7 @@ import Footer from '../sections/footer.js';
 
 
 
+
 export default class Signup extends Component {
     constructor(props) {
         super(props)
@@ -12,6 +13,7 @@ export default class Signup extends Component {
             lastName: "",
             userName: "",
             password: "",
+            
            
            
         }
@@ -19,8 +21,9 @@ export default class Signup extends Component {
        
         this.handleChange = this.handleChange.bind(this)
         this.handleSignup = this.handleSignup.bind(this)
-        
+       
     }
+    
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
@@ -89,8 +92,8 @@ export default class Signup extends Component {
                           >
                    </input>
                   
-                   <button type="submit" onClick={this.handleSignup}>Submit</button>
-                   
+                   <button onClick={event => window.location.href='/login'}>Submit</button>
+                           
                </div>
                <Footer />
             </div>
