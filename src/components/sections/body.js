@@ -9,7 +9,7 @@ import ImageFour from '../../../static/assets/images/family-four.jpeg';
 import ImageFive from '../../../static/assets/images/family-five.jpeg';
 import ImageSix from '../../../static/assets/images/family-six.jpeg';
 
- 
+
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const slider = (
@@ -27,7 +27,9 @@ const slider = (
     <div data-src="../../../static/assets/images/family-six.jpeg" />
     
   </AutoplaySlider>
+  
 );
+
 
 
 
@@ -48,7 +50,7 @@ export default class Body extends Component {
     
         return (
             <div className='body-wrapper'>
-                
+                <p className="tab blink">START DIGITIZING YOUR RECIPES TODAY BY SIGNING UP OR LOGGING IN!</p>
                 {slider}
                 
             </div>

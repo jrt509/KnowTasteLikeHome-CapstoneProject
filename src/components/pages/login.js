@@ -9,16 +9,27 @@ export default class Login extends Component {
     constructor(props) {
         super(props)
 
+        
+
         this.state = {
+            
            
            
     }
     this.handleLogin = this.handleLogin.bind(this)
+    this.handleChange = this.handleChange.bind(this)
 }
-handleLogin() {
+handleChange(event) {
+    this.setState({
+        [event.target.name]: event.target.value
+    })
+}
+
+handleLogin(event) {
     event.preventDefault()
+
     fetch("http://127.0.0.1:5000/user/verified", {
-            mode: "no-cors",
+        
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
@@ -26,14 +37,16 @@ handleLogin() {
                 password: this.props.password
             })
         })
-    .then(response => response.json())
+    .then(response => response.get.json())
     .then(data => console.log(data))
-    .catch(error => console.log(error))
+    .catch(error => {console.log(error)
+       
+    })
 }
 
 render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            
                 
                 <div className='login-wrapper'>
                 
@@ -43,14 +56,14 @@ render() {
                     type="text" 
                     placeholder="Username" 
                     value={this.props.userName} 
-                    onChange={this.props.handleChange}>
+                    onChange={this.handleChange}>
                 </input>
                 <input 
                     name="password" 
                     type="password" 
                     placeholder="Password" 
                     value={this.props.password} 
-                    onChange={this.props.handleChange}>
+                    onChange={this.handleChange}>
                 </input>
 
                 <button onClick={event => window.location.href='/myrecipes'}>Log In</button>
@@ -58,7 +71,7 @@ render() {
                 
                 <Footer />
                 </div>
-            </form>
+           
            
                
                 

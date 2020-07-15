@@ -12,10 +12,7 @@ export default class Signup extends Component {
             firstName: "",
             lastName: "",
             userName: "",
-            password: "",
-            
-           
-           
+            password: ""
         }
        
        
@@ -30,8 +27,8 @@ export default class Signup extends Component {
         })
     }
 
-    handleSignup = event => {
-        event.preventDefault()
+    handleSignup = (event) => {
+        event.preventDefault(event)
         
         fetch("http://127.0.0.1:5000/user/add", {
             mode: "no-cors",
@@ -47,13 +44,14 @@ export default class Signup extends Component {
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.log(error))
+        window.location.href='/login'
     }
         
     render() {
         return (
             <div className='signup-wrapper'>
-               <div className='form-wrapper'>
-                   
+               
+                   <div className='form-wrapper'>
                    <input name="firstName" 
                           type="text" 
                           placeholder="First Name" 
@@ -92,9 +90,8 @@ export default class Signup extends Component {
                           >
                    </input>
                   
-                   <button onClick={event => window.location.href='/login'}>Submit</button>
-                           
-               </div>
+                   <button onClick={this.handleSignup}>Submit</button>
+                   </div>
                <Footer />
             </div>
         )

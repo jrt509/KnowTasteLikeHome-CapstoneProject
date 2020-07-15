@@ -7,6 +7,7 @@
         justify-content: space-around;
         align-items: center;
         width: 100vw;
+        height: 90vh;
         background-color: rgb(224, 224, 224);
        
         
@@ -17,18 +18,24 @@
             width: 30vw;
             margin-top: 10px;
             border-radius: .3em;
-            
-
+            background-color: lemonchiffon;
+            border: 3px solid #428c43;
+            font-family: 'Roboto', sans-serif;
            
         }
         button {
-            height: 20px;
+            height: 40px;
             width: 100px;
-            background-color: #c54b26;
+            background-color: #428c43;
+            border: 4px solid lemonchiffon;
             color: white;
+            border-radius: .2em;
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         }
         
        
-        
-    }
+    }   
+    
 }

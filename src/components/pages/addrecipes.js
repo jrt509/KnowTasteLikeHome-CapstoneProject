@@ -43,7 +43,7 @@ export default class  extends Component {
     render() {
         return (
             <div className='add-recipe-page-wrapper'>
-                <form onSubmit={this.props.handleSubmit} className="content-wrapper">
+                <div className="content-wrapper">
                 
                
                     <input 
@@ -53,7 +53,8 @@ export default class  extends Component {
                         value={this.state.title}
                         onChange={this.handleChange}>
                     </input>
-                
+
+                    
                     <textarea 
                         name="ingredients" 
                         type="text" 
@@ -61,6 +62,7 @@ export default class  extends Component {
                         value={this.state.ingredients}
                         onChange={this.handleChange}>
                     </textarea>
+                    
 
                     <textarea 
                         name="preperation" 
@@ -72,7 +74,7 @@ export default class  extends Component {
                     <button type="submit" onClick={this.handleAddRecipe}>Add</button>
                     
                 
-                </form>     
+                </div>     
             <Footer /> 
              
             </div>
