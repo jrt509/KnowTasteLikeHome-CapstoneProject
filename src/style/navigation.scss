@@ -94,3 +94,18 @@
     }
 
 }
+@media screen and (max-width: 480px) {
+    .nav-link-wrapper {
+       
+       font-size: 0.6em;
+       li {
+       text-shadow: 2px 2px 0 #428c43, 
+                         2px -2px 0 #428c43, 
+                         -2px 2px 0 #428c43, 
+                         -2px -2px 0 #428c43, 
+                        
+       }
+
+    }
+   
+}

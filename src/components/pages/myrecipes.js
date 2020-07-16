@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 import Footer from '../sections/footer';
-import AddRecipes from '../pages/addrecipes';
+
 
 
 export default class MyRecipes extends Component {
@@ -8,10 +10,17 @@ export default class MyRecipes extends Component {
         super(props)
 
         this.state = {
+            open: false,
             data: []
         }
     
         this.handleGetAllRecipes = this.handleGetAllRecipes.bind(this)
+    }
+    onOpenModal = () => {
+        this.setState({ open: true })
+    }
+    onCloseModal = () => {
+        this.setState({ open: false })
     }
     
     handleGetAllRecipes() {
@@ -21,27 +30,48 @@ export default class MyRecipes extends Component {
             header: {"Content-Type": "application/json"}})
         .then(response => response.json())
         .then(data => {
-            this.setState({ data: data})
+            this.setState({ data: data })
+            console.log(data)
         })
-        .catch(error => console.log(error)) 
-        console.log(this.state.data)  
+        .catch(error => console.log(error))
     }
     renderRecipes() {
+        const { open } = this.state;
         return (
             <div>
-                {this.state.data.map(item => {
-                    <p key={item.id}
-                       title={item.title}
-                       ingredients={item.ingredients}
-                       preperation={item.preperation}>
-
-                    </p>
-                }
+                {this.state.data.map(item => (
+                    <div>
+                    <button
+                        className="recipe-title" 
+                        key={item.id} 
+                        onClick={this.onOpenModal}
+                    >
+                        {item.title}
+                    </button>
+                    <Modal open={open} onClose={this.onCloseModal} center>
+                    <p>Title:</p>
+                <p
+                 key={item.id}
+                >{item.title}</p>
+                <p>Ingredients:</p>
+                <p
+                 key={item.id}
+                >{item.ingredients}</p>
+                <p>Preperation:</p>
+                <p
+                 key={item.id}
+                >{item.preperation}</p>
+                    </Modal>
+                  </div>
+                
+                )
 
                 )}
             </div>
             
+          
         )
+        
     }
     
 
