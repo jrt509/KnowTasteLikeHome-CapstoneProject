@@ -9,11 +9,11 @@
 
     p { 
         height: 30px;
+        width: 68%;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #428c43;
-        border-radius: .2em;
+        color: #2756c4;
         margin-bottom: 50px;
         -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -27,7 +27,8 @@
         height: 60%;
         width: 60%;
         margin-right: 15px;
-        border: 12px solid #428c43;
+        margin-bottom: 20px;
+        border: 12px solid rgba(19, 81, 173, 0.356);
         border-radius: .5em;
         -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -38,4 +39,11 @@
 
  
     
+}
+@media screen and (max-width: 480px) {
+    .body-wrapper {
+        .carousel-wrapper {
+            margin-bottom: 50px;
+        }
+    }
 }

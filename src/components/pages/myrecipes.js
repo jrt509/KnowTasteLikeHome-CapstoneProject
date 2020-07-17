@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import Footer from '../sections/footer';
-
-
+import AddRecipes from '../pages/addrecipes';
 
 export default class MyRecipes extends Component {
     constructor(props) {
@@ -11,21 +10,24 @@ export default class MyRecipes extends Component {
 
         this.state = {
             open: false,
-            data: []
+            data: [],
+            username: "",
+            password: ""
         }
     
         this.handleGetAllRecipes = this.handleGetAllRecipes.bind(this)
     }
+
     onOpenModal = () => {
         this.setState({ open: true })
     }
+
     onCloseModal = () => {
         this.setState({ open: false })
     }
     
-    handleGetAllRecipes() {
-        
-        fetch("http://127.0.0.1:5000/recipe/get", {
+    handleGetAllRecipes() { 
+        fetch(`http://127.0.0.1:5000/recipe/get${this.state.username}`, {
             method: "GET",
             header: {"Content-Type": "application/json"}})
         .then(response => response.json())
@@ -49,7 +51,7 @@ export default class MyRecipes extends Component {
                         {item.title}
                     </button>
                     <Modal open={open} onClose={this.onCloseModal} center>
-                    <p>Title:</p>
+                <p>Title:</p>
                 <p
                  key={item.id}
                 >{item.title}</p>
@@ -71,16 +73,18 @@ export default class MyRecipes extends Component {
             
           
         )
+       
         
     }
     
-
 
     render() {
         return (
             <div className='my-recipes-wrapper'>
                 
+                
                <button type="submit" onClick={this.handleGetAllRecipes}>Show My Recipes</button>
+               
                <div className='render-wrapper'>
                    {this.renderRecipes()}
                </div>

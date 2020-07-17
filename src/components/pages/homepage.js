@@ -7,9 +7,7 @@ export default class HomePage extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            
-        }
+       
     }
 
     render() {
@@ -19,7 +17,6 @@ export default class HomePage extends Component {
                 
                 <Body />
                 <Footer />
-               
                 
                 
             </div>

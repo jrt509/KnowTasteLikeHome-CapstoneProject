@@ -10,6 +10,7 @@ import MyRecipes from './myrecipes.js';
 
 
 
+
 export default class Navigation extends Component {
     constructor(props) {
         super(props)
@@ -44,6 +45,8 @@ render() {
                     <li>
                         <NavLink to="/myrecipes">My Recipes</NavLink>
                     </li>
+                   
+
                 </ul>
                 <Switch>
                     <Route exact path="/" component={HomePage}/>
@@ -51,8 +54,9 @@ render() {
                     <Route path="/login" component={Login}/>
                     <Route path="/addrecipes" component={AddRecipes}/>
                     <Route path="/myrecipes" component={MyRecipes}/>
+                    
                 </Switch>
-            
+               
             </BrowserRouter>
            
             </div>

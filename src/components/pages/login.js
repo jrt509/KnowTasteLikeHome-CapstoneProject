@@ -1,82 +1,92 @@
 import React, { Component } from 'react';
+import Cookies from 'js-cookie';
+
 import Footer from '../sections/footer.js';
-
-
-
-
 
 export default class Login extends Component {
     constructor(props) {
         super(props)
 
-        
+        if (Cookies.get("username")) {
+            props.history.push("/myrecipes")
+        }
+
 
         this.state = {
-            
-           
-           
+           errorText: "",
+           username: "",
+           password: ""
     }
-    this.handleLogin = this.handleLogin.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 }
+
 handleChange(event) {
     this.setState({
-        [event.target.name]: event.target.value
+        [event.target.name]: event.target.value,
+        errorText: " "
     })
 }
 
 handleLogin(event) {
     event.preventDefault()
-
-    fetch("http://127.0.0.1:5000/user/verified", {
-        
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({
-                userName: this.props.userName,
-                password: this.props.password
-            })
+    if (this.state.username === "" || this.state.password === "") {
+        this.setState({ errorText: "All fields are required" })
+    } else {
+        fetch("http://127.0.0.1:5000/user/verified", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify({
+                    username: this.state.username,
+                    password: this.state.password
+                })
         })
-    .then(response => response.get.json())
-    .then(data => console.log(data))
-    .catch(error => {console.log(error)
-       
-    })
+        .then(response => {
+            response.json()
+        })
+        .then(data => {
+           
+            if (data === "User NOT Verified") {
+                this.setState({ errorText: "not verified" })
+            }
+            else {
+                this.setState({ errorText: "user loggedin"})
+                Cookies.set("username", this.state.username)
+                this.props.history.push("/myrecipes")
+            }
+        })
+        .catch(error => {
+            console.log(error)
+            this.setState({ errorMessage: "fetch error" })
+        })
+    }
 }
 
 render() {
-        return (
-            
+    return (   
+        <div className='login-wrapper'>
+            <div className="input-wrapper">
+            <input 
+                name="username" 
+                type="text" 
+                placeholder="username" 
+                value={this.state.username} 
+                onChange={this.handleChange}
+            />
+            <input 
+                name="password" 
+                type="password" 
+                placeholder="Password" 
+                value={this.state.password} 
+                onChange={this.handleChange}
+            />
                 
-                <div className='login-wrapper'>
-                
-                <div className="input-wrapper">
-                <input 
-                    name="userName" 
-                    type="text" 
-                    placeholder="Username" 
-                    value={this.props.userName} 
-                    onChange={this.handleChange}>
-                </input>
-                <input 
-                    name="password" 
-                    type="password" 
-                    placeholder="Password" 
-                    value={this.props.password} 
-                    onChange={this.handleChange}>
-                </input>
-
-                <button onClick={event => window.location.href='/myrecipes'}>Log In</button>
-                </div>
-                
-                <Footer />
-                </div>
-           
-           
-               
-                
-                
-        
-        )
-    }
+            <button onClick={this.handleLogin}>Log In</button>
+            <p className="error-text">{this.state.errorText}</p>
+            </div>         
+            <Footer />      
+        </div>
+    )
+}
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Footer from '../sections/footer'
-import Signup from '../pages/signup'
 
 
 export default class  extends Component {
@@ -10,7 +9,8 @@ export default class  extends Component {
         this.state = {
             title: "",
             ingredients: "",
-            preperation: ""
+            preperation: "",
+            username: ""
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleAddRecipe = this.handleAddRecipe.bind(this)
@@ -31,13 +31,15 @@ export default class  extends Component {
             body: JSON.stringify({ 
                 title: this.state.title,
                 ingredients: this.state.ingredients,
-                preperation: this.state.preperation
+                preperation: this.state.preperation,
+                username: this.state.username
             })
             
         })
         .then(response => response.json())
         .then(data => console.log(data))
-        .catch(error => console.log(error))   
+        .catch(error => console.log(error))
+        window.location.href='/myrecipes'   
     }
     
 
@@ -45,6 +47,14 @@ export default class  extends Component {
         return (
             <div className='add-recipe-page-wrapper'>
                 <div className="content-wrapper">
+
+                <input 
+                        name="username" 
+                        type="text" 
+                        placeholder="username" 
+                        value={this.state.username}
+                        onChange={this.handleChange}>
+                    </input>
                 
                
                     <input 
