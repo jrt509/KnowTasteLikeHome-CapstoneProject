@@ -86,9 +86,35 @@
                          -2px 0px 0 #2756c4, 
                          0px -2px 0 #2756c4;
             margin-right: 10px;
+            &:hover {
+                color: black;
+            }
            
-            
+          
         }
+        button {
+            width: 10%;
+            text-decoration: none;
+            font-family: 'Satisfy', cursive;
+            font-size: 15px;
+            color: white;
+            border: none;
+            background-color: transparent;
+            padding-right: 20px;
+            text-shadow: 2px 2px 0 #2756c4, 
+                         2px -2px 0 #2756c4, 
+                         -2px 2px 0 #2756c4, 
+                         -2px -2px 0 #2756c4, 
+                         2px 0px 0 #2756c4, 
+                         0px 2px 0 #2756c4, 
+                         -2px 0px 0 #2756c4, 
+                         0px -2px 0 #2756c4;
+            &:hover {
+                color: black;
+            }
+
+        }
+        
     
     
     
@@ -103,9 +129,12 @@
             i {
             font-size: 20px;
         }
+        }
     }
+    ul {
+        button {
+            font-size: .6em;
+        }
     }
 }
-    
-   
 }

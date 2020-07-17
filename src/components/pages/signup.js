@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import Footer from '../sections/footer.js'
+import Cookies from 'js-cookie';
 
 export default class Signup extends Component {
     constructor(props) {
         super(props)
- 
+        // if(Cookies.get("username")) {
+        //     this.props.history.push("/")
+        //   }
+        
         this.state = {
             firstname: "",
             lastname: "",
@@ -47,11 +51,13 @@ export default class Signup extends Component {
                 }
                 else {
                     this.setState({ errorText: "User created successfully" })
+                    Cookies.set("username", this.state.username)
+                    this.props.history.push("/login")
                 }
             })
             .catch(error => {
                 this.setState({
-                    errorText: "You got served"
+                    errorText: "Oops! Something went wrong"
                 })
             })
         }

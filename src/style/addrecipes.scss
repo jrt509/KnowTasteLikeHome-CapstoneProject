@@ -5,7 +5,7 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: #f3eb5e;
+    background-color:#32953c;
 
     
    
@@ -18,10 +18,12 @@
         border-radius: .2em;
         background-color: white;
         font-size: 18px;
-        border: 5px solid #808080;
+        border: 5px solid #1d284f;
         font-family: 'Source Sans Pro', sans-serif;
         margin-bottom: 10px;
-
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         
     }
     
@@ -35,9 +37,12 @@
         border-radius: .2em;
         background-color: white;
         font-size: 18px;
-        border: 5px solid #808080;
+        border: 5px solid #1d284f;
         font-family: 'Source Sans Pro', sans-serif;
         margin-bottom: 10px;
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         
         
     }
@@ -45,7 +50,7 @@
     button {
         height: 40px;
         width: 70px;
-        border: 5px solid #808080;
+        border: 5px solid #1d284f;
         border-radius: .2em;
         -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);

@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import Cookies from 'js-cookie';
-
 import Footer from '../sections/footer.js';
 
 export default class Login extends Component {
     constructor(props) {
         super(props)
 
-        if (Cookies.get("username")) {
-            props.history.push("/myrecipes")
-        }
+        // if (Cookies.get("username")) {
+        //     props.history.push("/")
+        // }
 
 
         this.state = {
            errorText: "",
            username: "",
-           password: ""
+           password: "",
+           login: true
     }
-
-    this.handleLogin = this.handleLogin.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    
 }
 
 handleChange(event) {
@@ -48,10 +48,10 @@ handleLogin(event) {
         .then(data => {
            
             if (data === "User NOT Verified") {
-                this.setState({ errorText: "not verified" })
+                this.setState({ errorText: "User NOT Verified" })
             }
             else {
-                this.setState({ errorText: "user loggedin"})
+                this.setState({ errorText: "User IS Logged In"})
                 Cookies.set("username", this.state.username)
                 this.props.history.push("/myrecipes")
             }
@@ -62,6 +62,9 @@ handleLogin(event) {
         })
     }
 }
+
+
+
 
 render() {
     return (   

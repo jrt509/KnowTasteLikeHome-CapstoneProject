@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import Footer from '../sections/footer';
+import Cookies from 'js-cookie';
 
 
 export default class MyRecipes extends Component {
     constructor(props) {
         super(props)
-
+        
         this.state = {
             open: false,
             data: [],
