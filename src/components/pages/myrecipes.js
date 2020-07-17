@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import Footer from '../sections/footer';
-import AddRecipes from '../pages/addrecipes';
+
 
 export default class MyRecipes extends Component {
     constructor(props) {
@@ -39,6 +39,7 @@ export default class MyRecipes extends Component {
     }
     renderRecipes() {
         const { open } = this.state;
+       
         return (
             <div>
                 {this.state.data.map(item => (
@@ -51,10 +52,11 @@ export default class MyRecipes extends Component {
                         {item.title}
                     </button>
                     <Modal open={open} onClose={this.onCloseModal} center>
+                   
                 <p>Title:</p>
                 <p
                  key={item.id}
-                >{item.title}</p>
+                >{item.id}</p>
                 <p>Ingredients:</p>
                 <p
                  key={item.id}
@@ -84,6 +86,7 @@ export default class MyRecipes extends Component {
                 
                 
                <button type="submit" onClick={this.handleGetAllRecipes}>Show My Recipes</button>
+               
                
                <div className='render-wrapper'>
                    {this.renderRecipes()}

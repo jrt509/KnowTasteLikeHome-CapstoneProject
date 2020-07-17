@@ -6,6 +6,7 @@ import Signup from './signup.js';
 import AddRecipes from './addrecipes.js';
 import Logo from '../sections/logo';
 import MyRecipes from './myrecipes.js';
+import Cookies from 'js-cookie';
 
 
 
@@ -14,12 +15,24 @@ import MyRecipes from './myrecipes.js';
 export default class Navigation extends Component {
     constructor(props) {
         super(props)
-
+        // if(!Cookies.get("username")) {
+        //     props.history.push("/myrecipes")
+        //   }
         
         this.state = {
+            // login: true
            
     }
-}  
+    // this.handleLogout = this.handleLogout.bind(this)
+}
+// handleLogout() {
+//     this.setState({ login: !this.state.login})
+//     Cookies.remove("username")
+//     this.props.history.push("/")
+    
+//   }
+
+
 
 render() {
   return (
@@ -45,7 +58,7 @@ render() {
                     <li>
                         <NavLink to="/myrecipes">My Recipes</NavLink>
                     </li>
-                   
+                    <button onClick={this.handleLogout}>Log Out</button> 
 
                 </ul>
                 <Switch>
@@ -56,7 +69,8 @@ render() {
                     <Route path="/myrecipes" component={MyRecipes}/>
                     
                 </Switch>
-               
+                 
+
             </BrowserRouter>
            
             </div>
