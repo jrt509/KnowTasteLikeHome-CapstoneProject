@@ -9,10 +9,14 @@ export default class MyRecipes extends Component {
     constructor(props) {
         super(props)
         
+        if(!Cookies.get("username")) {
+            props.history.push("/")
+          }
+
         this.state = {
             open: false,
             data: [],
-            username: "",
+            username: "das",
             password: ""
         }
     
@@ -26,9 +30,12 @@ export default class MyRecipes extends Component {
     onCloseModal = () => {
         this.setState({ open: false })
     }
+    componentDidMount() {
+        this.handleGetAllRecipes()
+    }
     
     handleGetAllRecipes() { 
-        fetch(`http://127.0.0.1:5000/recipe/get${this.state.username}`, {
+        fetch(`http://127.0.0.1:5000/recipe/get/${Cookies.get("username")}`, {
             method: "GET",
             header: {"Content-Type": "application/json"}})
         .then(response => response.json())
@@ -47,26 +54,26 @@ export default class MyRecipes extends Component {
                     <div>
                     <button
                         className="recipe-title" 
-                        key={item.id} 
+                        // key={item.id} 
                         onClick={this.onOpenModal}
                     >
                         {item.title}
                     </button>
+                    {this.state.data.map(item => (
                     <Modal open={open} onClose={this.onCloseModal} center>
                    
                 <p>Title:</p>
-                <p
-                 key={item.id}
-                >{item.id}</p>
+                <p>{item.title}</p>
                 <p>Ingredients:</p>
-                <p
-                 key={item.id}
-                >{item.ingredients}</p>
+                <p>{item.ingredients}</p>
                 <p>Preperation:</p>
-                <p
-                 key={item.id}
-                >{item.preperation}</p>
+                <p>{item.preperation}</p>
+                   
+
+                   
                     </Modal>
+                    ))}
+            
                   </div>
                 
                 )
@@ -86,7 +93,7 @@ export default class MyRecipes extends Component {
             <div className='my-recipes-wrapper'>
                 
                 
-               <button type="submit" onClick={this.handleGetAllRecipes}>Show My Recipes</button>
+               {/* <button type="submit" onClick={this.handleGetAllRecipes}>Show My Recipes</button> */}
                
                
                <div className='render-wrapper'>

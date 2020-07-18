@@ -23,9 +23,7 @@ export default class Navigation extends Component {
 handleLogout() {
     this.setState({ login: !this.state.login})
     Cookies.remove("username")
-    if (this.state.login) {
-        return <Redirect to="/login" push={true} />
-    }
+    window.location.href=("/login")
 }
 
 
