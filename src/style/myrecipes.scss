@@ -8,7 +8,7 @@
     background-color:#2756c4;
     background-image: url('../../static/assets/images/ingredients-image-jpeg.jpeg');
     background-repeat: no-repeat;
-    background-size: 800px;
+    background-size: cover;
 
     button {
         display: flex;
@@ -40,7 +40,7 @@
         margin-top: 20px;
         background-image: url('../../static/assets/images/recipe-image2.jpeg');
         background-position: left;
-        background-size: 200px;
+        background-size: cover;
         background-repeat: no-repeat;
         div {
             position: sticky;
