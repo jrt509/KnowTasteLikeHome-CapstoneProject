@@ -47,7 +47,7 @@ export default class Signup extends Component {
                     this.setState({ errorText: "Sorry, this username is already taken" })
                 }
                 else {
-                    this.setState({ errorText: "User created successfully" })
+                    this.setState({ errorText: "User Created Successfully" })
                     Cookies.set("username", this.state.username)
                     this.props.history.push("/login")
                 }
