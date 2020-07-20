@@ -3,7 +3,7 @@
     grid-template-rows: 6.5fr 1fr;
     justify-items: center;
     align-items: center;
-    height: 80%;
+    height: 800%;
     width: 100vw;
     background-color:#32953c;
     background-image: url('../../static/assets/images/food-image.jpg');
@@ -78,7 +78,9 @@
 }
 @media screen and (max-width: 480px) {
     .add-recipe-page-wrapper {
+        height: 100vh;
         overflow: hidden;
+        margin-top: 10px;
     }
     .content-wrapper {
         height: 100%;
