@@ -59,6 +59,7 @@
         width: 70px;
         border: 5px solid #1d284f;
         border-radius: .2em;
+        background-color: white;
         -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -73,7 +74,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    
-
 }
+@media screen and (max-width: 480px) {
+    .content-wrapper {
+        height: 90%;
+    }
+} 
