@@ -3,7 +3,7 @@ import 'react-responsive-modal/styles.css';
 import Footer from '../sections/footer';
 import Cookies from 'js-cookie';
 import Popup from 'reactjs-popup';
-import IngredientsImage from '../../../static/assets/images/ingredients-image-jpeg.jpeg'
+
 
 
 export default class MyRecipes extends Component {
@@ -67,7 +67,6 @@ export default class MyRecipes extends Component {
     render() {
         return (
             <div className='my-recipes-wrapper' >
-                {/* <img src={IngredientsImage}></img> */}
                 <div className='render-wrapper'>
                    {this.renderRecipes()}
                </div>

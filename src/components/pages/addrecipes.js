@@ -3,6 +3,7 @@ import Footer from '../sections/footer'
 import Cookies from 'js-cookie';
 
 
+
 export default class  extends Component {
     constructor(props) {
         super(props)
@@ -52,17 +53,9 @@ export default class  extends Component {
     render() {
         return (
             <div className='add-recipe-page-wrapper'>
+                
                 <div className="content-wrapper">
 
-                {/* <input 
-                        name="username" 
-                        type="text" 
-                        placeholder="username" 
-                        value={this.state.username}
-                        onChange={this.handleChange}>
-                    </input>
-                
-                */}
                     <input 
                         name="title" 
                         type="text" 

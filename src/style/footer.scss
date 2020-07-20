@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
 
-    i {
+    a {
         color: #FFFFFF;
         text-shadow: 2px 2px 0 #2756c4, 
                      2px -2px 0 #2756c4, 
@@ -26,5 +26,6 @@
 @media screen and (max-width: 480px) {
     .footer-wrapper {
         height: 60px;
+        
     }
 }
