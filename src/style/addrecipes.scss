@@ -76,6 +76,9 @@
     align-items: center;
 }
 @media screen and (max-width: 480px) {
+    .add-recipe-page-wrapper {
+        overflow: hidden;
+    }
     .content-wrapper {
         height: 90%;
     }
