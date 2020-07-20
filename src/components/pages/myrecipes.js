@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import 'react-responsive-modal/styles.css';
-import { Modal } from 'react-responsive-modal';
 import Footer from '../sections/footer';
 import Cookies from 'js-cookie';
+import Popup from 'reactjs-popup';
+import IngredientsImage from '../../../static/assets/images/ingredients-image-jpeg.jpeg'
 
 
 export default class MyRecipes extends Component {
@@ -14,26 +15,19 @@ export default class MyRecipes extends Component {
           }
 
         this.state = {
-            open: false,
             data: [],
-            username: "das",
-            password: ""
+            username: "",
+            password: "",
+           
         }
     
         this.handleGetAllRecipes = this.handleGetAllRecipes.bind(this)
     }
 
-    onOpenModal = () => {
-        this.setState({ open: true })
-    }
-
-    onCloseModal = () => {
-        this.setState({ open: false })
-    }
     componentDidMount() {
         this.handleGetAllRecipes()
     }
-    
+
     handleGetAllRecipes() { 
         fetch(`http://127.0.0.1:5000/recipe/get/${Cookies.get("username")}`, {
             method: "GET",
@@ -45,63 +39,39 @@ export default class MyRecipes extends Component {
         })
         .catch(error => console.log(error))
     }
+
     renderRecipes() {
-        const { open } = this.state;
-       
         return (
             <div>
-                {this.state.data.map(item => (
-                    <div>
-                    <button
-                        className="recipe-title" 
-                        // key={item.id} 
-                        onClick={this.onOpenModal}
-                    >
-                        {item.title}
-                    </button>
-                    {this.state.data.map(item => (
-                    <Modal open={open} onClose={this.onCloseModal} center>
-                   
-                <p>Title:</p>
-                <p>{item.title}</p>
-                <p>Ingredients:</p>
-                <p>{item.ingredients}</p>
-                <p>Preperation:</p>
-                <p>{item.preperation}</p>
-                   
-
-                   
-                    </Modal>
-                    ))}
-            
-                  </div>
+                {this.state.data.map(recipe => (
+                    <Popup trigger={<button key={recipe.id}>{recipe.title}</button>}>
+                        <div className="modal-section">
+                            <h3>Title:</h3>
+                            <h3>{recipe.title}</h3>
+                        </div>
+                        <div className="modal-section">
+                            <h3>Ingredients:</h3>
+                            <h3>{recipe.ingredients}</h3>
+                        </div>
+                        <div className="modal-section">
+                            <h3>Preperation:</h3>
+                            <h3>{recipe.preperation}</h3>
+                        </div>
+                    </Popup>
                 
-                )
-
-                )}
+                ))}
             </div>
-            
-          
         )
-       
-        
     }
-    
 
     render() {
         return (
-            <div className='my-recipes-wrapper'>
-                
-                
-               {/* <button type="submit" onClick={this.handleGetAllRecipes}>Show My Recipes</button> */}
-               
-               
-               <div className='render-wrapper'>
+            <div className='my-recipes-wrapper' >
+                {/* <img src={IngredientsImage}></img> */}
+                <div className='render-wrapper'>
                    {this.renderRecipes()}
                </div>
-               
                <Footer />
-               
             </div>
             
         )

@@ -6,6 +6,11 @@
     justify-content: center;
     align-items: center;
     background-color:#2756c4;
+    background-image: url('../../static/assets/images/ingredients-image-jpeg.jpeg');
+    img {
+       
+        opacity: .08px;
+    }
 
     button {
         height: 30px;
@@ -30,6 +35,10 @@
         border: 12px solid #1d284f;
         border-radius: 1em;
         overflow: auto;
+
+        .modal-section {
+            border: 5px solid transparent;
+        }
 
         .recipe-title {
             border: 5px solid transparent;
