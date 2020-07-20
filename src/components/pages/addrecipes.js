@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Footer from '../sections/footer'
 import Cookies from 'js-cookie';
 
-
-
 export default class  extends Component {
     constructor(props) {
         super(props)
@@ -12,25 +10,29 @@ export default class  extends Component {
             title: "",
             ingredients: "",
             preperation: "",
-            username: ""
+            username: "",
+            errorText: " "
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleAddRecipe = this.handleAddRecipe.bind(this)
         
-        
     }
+
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
+
     handleAddRecipe = event => {
         event.preventDefault()
         Cookies.get("username")
         this.setState({
             username: Cookies.get("username")
         })
-
+        if (this.state.title === "" || this.state.ingredients === "" || this.state.preperation === ""){
+            this.setState({ errorText: "All fields are required"})
+        } else {
         fetch("http://127.0.0.1:5000/recipe/add", {
             
             method: "POST",
@@ -41,14 +43,13 @@ export default class  extends Component {
                 preperation: this.state.preperation,
                 username: Cookies.get("username")
             })
-            
         })
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.log(error))
         window.location.href='/myrecipes'   
     }
-    
+}
 
     render() {
         return (
@@ -81,6 +82,7 @@ export default class  extends Component {
                         value={this.state.preperation}
                         onChange={this.handleChange}>
                     </textarea>
+                    <p className="error">{this.state.errorText}</p>
                     <button type="submit" onClick={this.handleAddRecipe}>Add</button>
                     
                 

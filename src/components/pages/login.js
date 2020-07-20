@@ -6,11 +6,6 @@ export default class Login extends Component {
     constructor(props) {
         super(props)
 
-        // if (Cookies.get("username")) {
-        //     props.history.push("/")
-        // }
-
-
         this.state = {
            errorText: "",
            username: "",
@@ -62,9 +57,6 @@ handleLogin(event) {
         })
     }
 }
-
-
-
 
 render() {
     return (   

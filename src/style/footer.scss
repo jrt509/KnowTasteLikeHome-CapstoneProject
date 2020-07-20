@@ -18,6 +18,7 @@
                      -2px 0px 0 #2756c4, 
                      0px -2px 0 #2756c4;
         padding: 10px;
+        text-decoration: none;
         &:hover {
             color: black;
         }
@@ -26,6 +27,6 @@
 @media screen and (max-width: 480px) {
     .footer-wrapper {
         height: 60px;
-        
+
     }
 }

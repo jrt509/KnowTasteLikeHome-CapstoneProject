@@ -38,17 +38,25 @@
         border-radius: 1em;
         overflow: scroll;
         margin-top: 20px;
+        background-image: url('../../static/assets/images/recipe-image2.jpeg');
+        background-position: left;
+        background-size: 200px;
+        background-repeat: no-repeat;
         div {
             position: sticky;
+            
            
             .modal-section {
                 display: flex;
-                justify-content: center;
-                flex-direction: row;
+                justify-content: right;
+                flex-direction: column;
+                align-items: center;
                 height: 30%;
                 border: 5px solid transparent;
                 position: relative;
                 overflow: scroll;
+                background-color: white;
+                
             }
         }
     }   

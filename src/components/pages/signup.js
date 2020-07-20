@@ -5,9 +5,6 @@ import Cookies from 'js-cookie';
 export default class Signup extends Component {
     constructor(props) {
         super(props)
-        // if(Cookies.get("username")) {
-        //     this.props.history.push("/")
-        //   }
         
         this.state = {
             firstname: "",
@@ -46,7 +43,7 @@ export default class Signup extends Component {
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                if (data === "username Taken") {
+                if (data === "Username Taken") {
                     this.setState({ errorText: "Sorry, this username is already taken" })
                 }
                 else {

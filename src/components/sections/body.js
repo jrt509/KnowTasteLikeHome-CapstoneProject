@@ -38,10 +38,6 @@ export default class Body extends Component {
     constructor(props) {
         super(props)
 
-        
-        this.state = {
-            
-        }
     }
     
     
