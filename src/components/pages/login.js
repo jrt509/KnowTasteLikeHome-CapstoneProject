@@ -29,7 +29,7 @@ handleLogin(event) {
     if (this.state.username === "" || this.state.password === "") {
         this.setState({ errorText: "All fields are required" })
     } else {
-        fetch("http://127.0.0.1:5000/user/verified", {
+        fetch("https://know-taste-like-home-back-jrt.herokuapp.com/user/verified", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({

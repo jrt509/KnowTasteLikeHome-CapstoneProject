@@ -33,7 +33,7 @@ export default class  extends Component {
         if (this.state.title === "" || this.state.ingredients === "" || this.state.preperation === ""){
             this.setState({ errorText: "All fields are required"})
         } else {
-        fetch("http://127.0.0.1:5000/recipe/add", {
+        fetch("https://know-taste-like-home-back-jrt.herokuapp.com/recipe/add", {
             
             method: "POST",
             headers: {"content-type": "application/json"},

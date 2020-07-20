@@ -30,7 +30,7 @@ export default class Signup extends Component {
         if (this.state.firstname === "" || this.state.lastname === "" || this.state.username === "" || this.state.password === "") {
             this.setState({ errorText: "All fields are required" })
         } else {
-            fetch("http://127.0.0.1:5000/user/add", {
+            fetch("https://know-taste-like-home-back-jrt.herokuapp.com/user/add", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
