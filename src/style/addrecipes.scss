@@ -1,12 +1,12 @@
 .add-recipe-page-wrapper {
     display: grid;
-    grid-template-rows: 4fr 1fr;
+    grid-template-rows: 6.5fr 1fr;
     justify-items: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
     background-color:#32953c;
-    background-image: url('../../static/assets/images/tomato-image.jpeg');
+    background-image: url('../../static/assets/images/prepared-image.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -81,6 +81,6 @@
         overflow: hidden;
     }
     .content-wrapper {
-        height: 90%;
+        height: 100%;
     }
 } 

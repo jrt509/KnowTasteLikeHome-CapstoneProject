@@ -10,7 +10,7 @@ export default class Login extends Component {
            errorText: "",
            username: "",
            password: "",
-           login: true
+           isLoggedIn: true
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
