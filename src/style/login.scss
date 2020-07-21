@@ -65,14 +65,16 @@
 @media screen and (max-width: 480px) {
     .login-wrapper {
         height: 90vh;
+
+        .input-wrapper {
+            height: 40vh;
+            margin-bottom: 40px;
+    
+            input {
+                height: 18px;
+            }
+        } 
         
     }
-    .input-wrapper {
-        height: 70vh;
-        margin-bottom: 40px;
-
-        input {
-            height: 18px;
-        }
-    } 
+    
 }
