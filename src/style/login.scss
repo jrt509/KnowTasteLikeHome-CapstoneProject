@@ -1,19 +1,25 @@
 .login-wrapper {
     height: 100vh;
     width: 100vw;
-    display: grid;
-    grid-template-rows: 6.8fr 1fr;
-    background-color: rgb(224, 224, 224);
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    
+    flex-direction: column;
+    // display: grid;
+    // grid-template-rows: 6.8fr 1fr;
+   
+    // justify-items: center;
+    // align-items: center;
+    background-color: rgb(224, 224, 224);
 
     .input-wrapper {
-        height: 75%;
-        width: 75%;
+        height: 50%;
+        width: 65%;
         display: flex;
         justify-content: center;
         flex-direction: column;
+        margin-top: 15px;
+        margin-bottom: 15px;
         flex: 1 1 auto;
         align-items: center;
         background-color: rgba(19, 81, 173, 0.356);
@@ -62,6 +68,9 @@
         
     }
     .input-wrapper {
+        height: 70vh;
+        margin-bottom: 40px;
+
         input {
             height: 18px;
         }
