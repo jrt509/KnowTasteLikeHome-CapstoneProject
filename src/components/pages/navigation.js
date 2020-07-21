@@ -13,7 +13,7 @@ export default class Navigation extends Component {
         super(props)
        
         this.state = {
-           isLoggedIn: true
+           login: true
            
             
     }
@@ -28,9 +28,10 @@ handleLogout() {
 
 
 render() {
-    const { isLoggedIn } =this.state;
+   
     return (
         <div className='nav-link-wrapper'>
+    
             <BrowserRouter>
                 <ul>
                 <Logo />    
@@ -52,6 +53,7 @@ render() {
                     <button onClick={this.handleLogout}>Log Out</button>
 
                 </ul>
+            
                 <Switch>
                     <Route exact path="/" component={HomePage}/>
                     <Route path="/signup" component={Signup}/>
@@ -60,7 +62,7 @@ render() {
                     <Route path="/myrecipes" component={MyRecipes}/>
                 </Switch>
             </BrowserRouter>
-           
+
             </div>
     )}
 }
