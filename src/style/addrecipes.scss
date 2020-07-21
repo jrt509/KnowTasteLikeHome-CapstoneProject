@@ -1,15 +1,13 @@
+@import './footer.scss';
+
 .add-recipe-page-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    // display: grid;
-    // grid-template-rows: 6.5fr 1fr;
-    // justify-items: center;
-    // align-items: center;
-    height: 90vh;
+    min-height: 80vh;
     width: 100vw;
-    // background-color:#32953c;
+    margin-top: 17px;
     background-image: url('../../static/assets/images/food-image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -82,13 +80,18 @@
     justify-content: center;
     align-items: center;
 }
+.footer {
+    margin-top: 20px;
+}
+
 @media screen and (max-width: 480px) {
     .add-recipe-page-wrapper {
-        height: 71vh;
+        height: 80vh;
 
         
     }
     .content-wrapper {
         height: 67vh;
     }
+    
 } 

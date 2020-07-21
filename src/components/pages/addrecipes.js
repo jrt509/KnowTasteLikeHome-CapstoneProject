@@ -87,8 +87,7 @@ export default class  extends Component {
                     
                 
                 </div>     
-            <Footer /> 
-             
+                <Footer /> 
             </div>
         )
     }
