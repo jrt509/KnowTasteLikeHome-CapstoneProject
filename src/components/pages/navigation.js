@@ -13,7 +13,7 @@ export default class Navigation extends Component {
         super(props)
        
         this.state = {
-            isLoggedIn: true
+           isLoggedIn: true
            
             
     }
@@ -28,8 +28,8 @@ handleLogout() {
 
 
 render() {
-
-  return (
+    const { isLoggedIn } =this.state;
+    return (
         <div className='nav-link-wrapper'>
             <BrowserRouter>
                 <ul>
