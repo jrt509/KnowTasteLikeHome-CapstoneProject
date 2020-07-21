@@ -56,6 +56,9 @@
     }
 }
 @media screen and (max-width: 480px) {
+    .login-wrapper {
+        height: 75vh;
+    }
     .input-wrapper {
         input {
             height: 18px;
