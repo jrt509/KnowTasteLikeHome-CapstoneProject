@@ -59,11 +59,12 @@
     }   
 }
 @media screen and (max-width: 480px) {
+    .my-recipes-wrapper {
+        height: 100vh;
+    }
     .render-wrapper {
         height: 50vh;
         width: 50vw;
-        // background-image: url('../../static/assets/images/recipe-image2.jpeg');
-        // background-size: 100px;
-        // background-repeat: no-repeat;
+        
     }
 }
