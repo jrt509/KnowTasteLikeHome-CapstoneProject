@@ -13,8 +13,8 @@
     background-color: rgb(224, 224, 224);
 
     .input-wrapper {
-        height: 50%;
-        width: 65%;
+        height: 50vh;
+        width: 65vw;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -65,16 +65,13 @@
 @media screen and (max-width: 480px) {
     .login-wrapper {
         height: 90vh;
-
-        .input-wrapper {
-            height: 40vh;
-            margin-bottom: 40px;
-    
-            input {
-                height: 18px;
-            }
-        } 
-        
     }
+    .input-wrapper {
+        height: 40vh;
+        margin-bottom: 40px;
+        input {
+            height: 18px;
+        }
+    } 
     
 }

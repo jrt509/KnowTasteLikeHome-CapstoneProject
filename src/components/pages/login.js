@@ -60,7 +60,7 @@ handleLogin(event) {
 
 render() {
     return (   
-        <div className='login-wrapper'>
+        <div className="login-wrapper">
             <div className="input-wrapper">
             <input 
                 name="username" 
