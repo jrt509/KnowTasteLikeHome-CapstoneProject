@@ -10,6 +10,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    
 
     
    
@@ -81,6 +82,7 @@
         height: 100vh;
         overflow: hidden;
         margin-top: 10px;
+        position: fixed;
     }
     .content-wrapper {
         height: 100%;

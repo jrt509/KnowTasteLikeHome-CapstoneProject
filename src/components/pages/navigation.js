@@ -13,7 +13,7 @@ export default class Navigation extends Component {
         super(props)
        
         this.state = {
-            login: false
+            isLoggedIn: true
            
             
     }
