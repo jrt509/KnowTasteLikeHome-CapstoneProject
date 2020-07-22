@@ -34,9 +34,9 @@ render() {
     
             <BrowserRouter>
                 <ul>
-                <Logo />    
+                   
                     <li>
-                        <NavLink exact to="/">Home</NavLink>
+                        <NavLink exact to="/">{<Logo/>}</NavLink>
                     </li>
                     <li>
                         <NavLink to="/signup">Sign Up</NavLink>

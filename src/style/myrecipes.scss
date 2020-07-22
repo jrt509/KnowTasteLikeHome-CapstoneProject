@@ -69,6 +69,11 @@
     .render-wrapper {
         height: 50vh;
         width: 50vw;
+
+        button {
+            margin-top: 15px;
+            font-size: 3em;
+        }
         
     }
 }
