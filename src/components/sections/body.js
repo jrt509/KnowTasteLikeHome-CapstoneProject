@@ -46,7 +46,7 @@ export default class Body extends Component {
     
         return (
             <div className='body-wrapper'>
-                <p className="tab blink">START DIGITIZING YOUR RECIPES TODAY BY SIGNING UP OR LOGGING IN!</p>
+                <p className="tab blink">SIGN UP OR LOG IN TO DIGITIZE YOUR RECIPES</p>
                 {slider}
                 
             </div>
