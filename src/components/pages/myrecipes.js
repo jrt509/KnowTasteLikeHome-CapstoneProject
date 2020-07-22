@@ -43,9 +43,9 @@ export default class MyRecipes extends Component {
 
     renderRecipes() {
         return (
-            <div>
+            <div  >
                 {this.state.data.map(recipe => (
-                    <Popup trigger={<button key={recipe.id}>{recipe.title}</button>}>
+                    <Popup trigger={<button key={recipe.id}>{recipe.title}</button>} position="center center">
                         <div className="modal-section">
                             <h3>Title:</h3>
                             <h3>{recipe.title}</h3>
@@ -68,7 +68,7 @@ export default class MyRecipes extends Component {
     render() {
         return (
             <div className='my-recipes-wrapper' >
-                <div className='render-wrapper'>
+                <div className='render-wrapper' >
                    {this.renderRecipes()}
                </div>
                <Footer />
