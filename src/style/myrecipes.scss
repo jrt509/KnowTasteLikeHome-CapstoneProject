@@ -32,14 +32,14 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 75vh;
-        width: 70%;
+        height: 65vh;
+        width: 60%;
         background-color:white;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         border: 12px solid #1d284f;
         border-radius: 1em;
         overflow: scroll;
-        margin-top: 10px;
+        margin-top: 55px;
        
         div {
             position: sticky;
@@ -63,7 +63,6 @@
 @media screen and (max-width: 480px) {
     .my-recipes-wrapper {
         height: 90vh;
-        
         padding-top: 10px;
        
 

@@ -6,6 +6,10 @@ export default class Login extends Component {
     constructor(props) {
         super(props)
 
+        if (Cookies.get("username")) {
+            window.location.href="/addrecipes"
+        }
+
         this.state = {
            errorText: "",
            username: "",
@@ -48,7 +52,8 @@ handleLogin(event) {
             else {
                 this.setState({ errorText: "User IS Logged In"})
                 Cookies.set("username", this.state.username)
-                this.props.history.push("/myrecipes")
+                window.location.reload()
+               
             }
         })
         .catch(error => {
