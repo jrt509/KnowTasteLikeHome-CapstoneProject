@@ -48,7 +48,7 @@ export default class Signup extends Component {
                 }
                 else {
                     this.setState({ errorText: "User Created Successfully" })
-                    Cookies.set("username", this.state.username)
+                    // Cookies.set("username", this.state.username)
                     this.props.history.push("/login")
                 }
             })
