@@ -25,7 +25,8 @@ export default class MyRecipes extends Component {
     }
 
     componentDidMount() {
-        this.handleGetAllRecipes()
+        this.handleGetAllRecipes();
+       this.renderRecipes();
     }
 
     handleGetAllRecipes() { 

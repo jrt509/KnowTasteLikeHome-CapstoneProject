@@ -17,6 +17,7 @@ export default class  extends Component {
         this.handleAddRecipe = this.handleAddRecipe.bind(this)
         
     }
+    
 
     handleChange(event) {
         this.setState({
@@ -33,7 +34,7 @@ export default class  extends Component {
         if (this.state.title === "" || this.state.ingredients === "" || this.state.preperation === ""){
             this.setState({ errorText: "All fields are required"})
         } else {
-        fetch("https://know-taste-like-home-back-jrt.herokuapp.com/recipe/add", {
+        fetch(`https://know-taste-like-home-back-jrt.herokuapp.com/recipe/add`, {
             
             method: "POST",
             headers: {"content-type": "application/json"},
