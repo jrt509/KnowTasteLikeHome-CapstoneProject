@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
-import ImageOne from '../../../static/assets/images/family-one.jpeg';
-import ImageTwo from '../../../static/assets/images/family-two.jpeg';
-import ImageThree from '../../../static/assets/images/family-three.jpeg';
-import ImageFour from '../../../static/assets/images/family-four.jpeg';
-import ImageFive from '../../../static/assets/images/family-five.jpeg';
-import ImageSix from '../../../static/assets/images/family-six.jpeg';
+import Curry from '../../../static/assets/images/curry.jpg';
+import FiberFoods from '../../../static/assets/images/fiber-foods.jpg';
+import Berries from '../../../static/assets/images/berries.jpg';
+import Tilapia from '../../../static/assets/images/tilapia.jpg';
+import Veggies from '../../../static/assets/images/veggies.jpg';
+import Healthy2 from '../../../static/assets/images/healthy2.jpg';
 
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -19,12 +19,12 @@ const slider = (
     interval={6000}
   >
     
-    <div data-src="../../../static/assets/images/family-one.jpeg" />
-    <div data-src="../../../static/assets/images/family-two.jpeg" />
-    <div data-src="../../../static/assets/images/family-three.jpeg" />
-    <div data-src="../../../static/assets/images/family-four.jpeg" />
-    <div data-src="../../../static/assets/images/family-five.jpeg" />
-    <div data-src="../../../static/assets/images/family-six.jpeg" />
+    <div data-src="../../../static/assets/images/curry.jpg" />
+    <div data-src="../../../static/assets/images/fiber-foods.jpg" />
+    <div data-src="../../../static/assets/images/berries.jpg" />
+    <div data-src="../../../static/assets/images/tilapia.jpg" />
+    <div data-src="../../../static/assets/images/veggies.jpg" />
+    <div data-src="../../../static/assets/images/healthy2.jpg" />
     
   </AutoplaySlider>
   
