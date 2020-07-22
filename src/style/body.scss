@@ -52,6 +52,9 @@
 }
 @media screen and (max-width: 480px) {
     .body-wrapper {
+        p {
+            padding-bottom: 40px;
+        }
         .carousel-wrapper {
             margin-bottom: 50px;
         }
