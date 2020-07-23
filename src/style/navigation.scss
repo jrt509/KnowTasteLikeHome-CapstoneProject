@@ -157,7 +157,6 @@
            font-size: smaller;
            margin-right: 20px;
             
-
         .logo-middle {
             i {
             font-size: 18px;
@@ -178,3 +177,12 @@
     }
 }
 }
+@media screen and (max-width: 330px) {
+    .nav-link-wrapper {
+        font-size: 0.2em;
+       .logo-wrapper{
+         width: 50px;  
+}
+}
+}
+
