@@ -52,7 +52,7 @@ export default class  extends Component {
                 title: "",
                 ingredients: "",
                 preperation: "",
-                errorText: "Recipe Added!, click to add more"
+                errorText: "Recipe Added!"
             })
             
         }).then(
@@ -67,8 +67,6 @@ export default class  extends Component {
                 errorText: "..."
             })
         })
-       
-        // window.location.href='/myrecipes'   
     }
 }
 
@@ -111,7 +109,7 @@ export default class  extends Component {
                         value={this.state.preperation}
                         onChange={this.handleChange}>
                     </textarea>
-                    {/* <p className="error">{this.state.errorText}</p> */}
+                    
                     <button 
                         type="submit" 
                         style={{color: "darkred", fontWeight: "bold", marginTop: 10}} 
