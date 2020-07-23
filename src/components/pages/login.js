@@ -68,6 +68,7 @@ render() {
         <div className="login-wrapper">
             <div className="input-wrapper">
             <input 
+                id="username-input"
                 name="username" 
                 type="text" 
                 placeholder="username" 
@@ -75,6 +76,7 @@ render() {
                 onChange={this.handleChange}
             />
             <input 
+                id="password-input"
                 name="password" 
                 type="password" 
                 placeholder="Password" 

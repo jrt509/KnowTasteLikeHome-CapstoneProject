@@ -1,12 +1,12 @@
 .login-wrapper {
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: rgb(224, 224, 224);
-    margin-top: 20px;
+    // margin-top: 20px;
     background-image: url('../../static/assets/images/peas-shrimp.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,7 +27,7 @@
 
 
     .input-wrapper {
-        height: 50vh;
+        height: 100%;
         width: 50vw;
         display: flex;
         justify-content: center;
@@ -81,22 +81,31 @@
 }
 @media screen and (max-width: 480px) {
     .login-wrapper {
-        height: 90vh;
-        margin-top: 10px;
+        height: 100vh;
+        // margin-top: 10px;
     
     .input-wrapper {
-        height: 30vh;
-        margin-bottom: 250px;
-        margin-top: 90px;
+        font-size: smaller;
+        
         input {
             height: 5px;
-            button {
-                height: 20px;
-            }
+           
         }
-        .footer-wrapper {
-            margin-top: 100px;
-        } 
+        #username-input {
+            font-size: small;
+            height: 2%;
+        }
+
+        #password-input {
+            font-size: small;
+            height: 2%;
+        }
+        button {
+            height: 20px;
+        }
+        // .footer-wrapper {
+        //     margin-top: 100px;
+        // } 
     }
 }
     
