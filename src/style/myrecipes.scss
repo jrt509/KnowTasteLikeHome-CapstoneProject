@@ -1,5 +1,5 @@
 .my-recipes-wrapper {
-    height: 90vh;
+    height: 100%;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 90vh;
+        height: 70vh;
         width: 60%;
         background-color:white;
         margin-bottom: 40px;
@@ -60,20 +60,27 @@
 @media screen and (max-width: 480px) {
     .my-recipes-wrapper {
         height: 100%;
-        
-       
-
     }
     .render-wrapper {
         height: 100%;
         width: 50vw;
-
-        button {
-            font-size: .8em;
+       button {
+            font-size: 1em;
            
         }
         
     }
 }
+@media screen and (max-width: 1024px) {
+   .footer-wrapper {
+    margin-top: 10px;
+    }
+}
+
+ 
+
+    
+
+
 
 

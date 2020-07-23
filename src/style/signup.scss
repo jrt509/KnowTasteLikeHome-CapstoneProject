@@ -11,7 +11,7 @@
         justify-content: space-around;
         align-items: center;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         background-color: #a72f2f;
         background-image: url('../../static/assets/images/campfire.jpeg');
         background-repeat: no-repeat;
@@ -59,7 +59,8 @@
        background-color: white;
        border: 4px solid #1d284f;
        color: #a72f2f;
-    }   
+    }
+    
     
 }
 
@@ -82,6 +83,7 @@
 
         .footer-wrapper {
             margin: 0px;
+
         }
     }
 }

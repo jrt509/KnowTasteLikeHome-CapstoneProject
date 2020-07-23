@@ -8,11 +8,12 @@
     background-color: rgb(224, 224, 224);
 
     p { 
-        height: 30px;
-        width: 60%;
+        height: 40px;
+        width: 70%;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         color: #2756c4;
         padding-bottom: 100px;
         background-color: transparent;
@@ -51,12 +52,31 @@
     
 }
 @media screen and (max-width: 480px) {
-    .body-wrapper {
-        p {
-            padding-bottom: 40px;
-        }
-        .carousel-wrapper {
-            margin-bottom: 50px;
+    .nav-link-wrapper {
+        .home-page-wrapper {
+            .body-wrapper {
+                p {
+                    padding-bottom: 40px;
+                    width: 80%;
+                    text-align: center;
+                    font-size: large;
+                }
+                .carousel-wrapper {
+                    margin-bottom: 50px;
+                }
+            }
         }
     }
 }
+@media screen and (max-width: 280px) {
+    .home-page-wrapper {
+        .footer-wrapper {
+            a {
+                font-size: 3em;
+            }
+        }
+    }
+}
+
+
+
