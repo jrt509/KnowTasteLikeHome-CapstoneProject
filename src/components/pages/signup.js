@@ -11,7 +11,7 @@ export default class Signup extends Component {
             lastname: "",
             username: "",
             password: "",
-            errorText: " "
+            errorText: "Submit"
         }
        
         this.handleChange = this.handleChange.bind(this)
@@ -21,7 +21,6 @@ export default class Signup extends Component {
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value,
-            errorText: " "
         })
     }
 
@@ -92,8 +91,8 @@ export default class Signup extends Component {
                           onChange={this.handleChange}
                     /> 
                           
-                   <p className="error-text">{this.state.errorText}</p>
-                   <button onClick={this.handleSignup}>Submit</button>
+                   {/* <div className="error-text">{this.state.errorText}</div> */}
+                 <button style={{color: "darkred", fontWeight: "bold", backgroundColor: "white"}} onClick={this.handleSignup}>{this.state.errorText}</button>
                    
                 </div>
                <Footer />

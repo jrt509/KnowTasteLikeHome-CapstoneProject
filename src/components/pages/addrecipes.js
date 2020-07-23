@@ -11,7 +11,7 @@ export default class  extends Component {
             ingredients: "",
             preperation: "",
             username: "",
-            errorText: " "
+            errorText: "Add Recipe"
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleAddRecipe = this.handleAddRecipe.bind(this)
@@ -29,7 +29,8 @@ export default class  extends Component {
         event.preventDefault()
         Cookies.get("username")
         this.setState({
-            username: Cookies.get("username")
+            username: Cookies.get("username"),
+            errorText: "Sending recipe"
         })
         if (this.state.title === "" || this.state.ingredients === "" || this.state.preperation === ""){
             this.setState({ errorText: "All fields are required"})
@@ -46,9 +47,28 @@ export default class  extends Component {
             })
         })
         .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
-        window.location.href='/myrecipes'   
+        .then(data => {
+            this.setState({
+                title: "",
+                ingredients: "",
+                preperation: "",
+                errorText: "Recipe Added!, click to add more"
+            })
+            
+        }).then(
+            this.setState({
+                errorText: "Add Recipe"
+            })
+        )
+        
+        .catch(error => {
+            console.log(error)
+            this.setState({
+                errorText: "..."
+            })
+        })
+       
+        // window.location.href='/myrecipes'   
     }
 }
 
@@ -61,7 +81,7 @@ export default class  extends Component {
                     <input 
                         name="title" 
                         type="text" 
-                        placeholder="title" 
+                        placeholder="title ie: Banana Banana Bread" 
                         value={this.state.title}
                         onChange={this.handleChange}>
                     </input>
@@ -70,7 +90,13 @@ export default class  extends Component {
                     <textarea 
                         name="ingredients" 
                         type="text" 
-                        placeholder="enter ingredients" 
+                        placeholder="enter ingredients ie: 2 cups all-purpose flour,  
+                        1 teaspoon baking soda,
+                        ¼ teaspoon salt,
+                        ½ cup butter,  
+                        ¾ cup brown sugar,
+                        2 eggs, beaten,
+                        2 ⅓ cups mashed overripe " 
                         value={this.state.ingredients}
                         onChange={this.handleChange}>
                     </textarea>
@@ -79,12 +105,21 @@ export default class  extends Component {
                     <textarea 
                         name="preperation" 
                         type="text" 
-                        placeholder="enter preperation" 
+                        placeholder="enter preperation ie: Step 1: Preheat oven to 350 degrees F (175 degrees C). 
+                         Step 2: In a large bowl, combine flour, baking soda and salt. In a separate bowl, cream together butter and brown sugar. Stir in eggs and mashed bananas until well blended. 
+                        Step 3: Bake in preheated oven for 60 to 65 minutes..." 
                         value={this.state.preperation}
                         onChange={this.handleChange}>
                     </textarea>
-                    <p className="error">{this.state.errorText}</p>
-                    <button type="submit" onClick={this.handleAddRecipe}>Add</button>
+                    {/* <p className="error">{this.state.errorText}</p> */}
+                    <button 
+                        type="submit" 
+                        style={{color: "darkred", fontWeight: "bold", marginTop: 10}} 
+                        onClick={this.handleAddRecipe}
+                        className="add-btn"
+                    >
+                        {this.state.errorText}
+                    </button>
                     
                 
                 </div>     
