@@ -54,7 +54,7 @@ handleLogin(event) {
             }
             else  {
                 
-                this.setState({ errorText: "User Verified"})
+                // this.setState({ errorText: "User Verified"})
                 Cookies.set("username", this.state.username)
                 window.location.reload()
                 
