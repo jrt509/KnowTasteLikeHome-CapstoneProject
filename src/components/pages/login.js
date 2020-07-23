@@ -67,25 +67,25 @@ render() {
     return (   
         <div className="login-wrapper">
             <div className="input-wrapper">
-            <input 
-                id="username-input"
-                name="username" 
-                type="text" 
-                placeholder="username" 
-                value={this.state.username} 
-                onChange={this.handleChange}
-            />
-            <input 
-                id="password-input"
-                name="password" 
-                type="password" 
-                placeholder="Password" 
-                value={this.state.password} 
-                onChange={this.handleChange}
-            />
-                
-    <button style={{color: "darkred", fontWeight: "bold"}} onClick={this.handleLogin}>{this.state.errorText}</button>
-            {/* <div className="error-text">{this.state.errorText}</div> */}
+                <input 
+                    id="username-input"
+                    name="username" 
+                    type="text" 
+                    placeholder="username" 
+                    value={this.state.username} 
+                    onChange={this.handleChange}
+                />
+                <input 
+                    id="password-input"
+                    name="password" 
+                    type="password" 
+                    placeholder="Password" 
+                    value={this.state.password} 
+                    onChange={this.handleChange}
+                />
+                    
+                <button style={{color: "darkred", fontWeight: "bold"}} onClick={this.handleLogin}>{this.state.errorText}</button>
+                {/* <div className="error-text">{this.state.errorText}</div> */}
             </div>         
             <Footer />      
         </div>

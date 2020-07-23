@@ -1,20 +1,24 @@
-@import './footer.scss';
-
 .add-recipe-page-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 80vh;
+    height: 100vh;
     width: 100vw;
-    margin-top: 30px;
+    // margin-top: 30px;
     
     background-image: url('../../static/assets/images/pizza.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     
-
+.content-wrapper {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
    
     input {
@@ -38,15 +42,12 @@
     
     
     textarea {
-        height: 100vh;
+        height: 20%;
         width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         border-radius: .2em;
         background-color: white;
         font-size: 18px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         border: 5px solid #1d284f;
         font-family: 'Source Sans Pro', sans-serif;
         -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -54,41 +55,24 @@
         box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     }
 
-    p {
-        height: 50px;
-       color: black;
-    }
-    button {
-        height: 70px;
-        width: 100px;
-        margin-bottom: 10px;
+
+    
+    .add-btn {
+        height: 40px;
         border: 5px solid #1d284f;
         border-radius: .2em;
         background-color: white;
         -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-       
-    }
-    
-    
-}
-.content-wrapper {
-    height: 62vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .add-btn {
         letter-spacing: 0.2rem;
         font-weight: bold;
         font-size: 1em;
         width: 50%;
         margin-bottom: 10px;
-        height: 70%;
     }
+}
+ 
     
 }
 
@@ -97,15 +81,23 @@
 @media screen and (max-width: 480px) {
     .add-recipe-page-wrapper {
         min-height: 80vh;
-        margin-top: 10px;
+        // margin-top: 10px;
         
-    }
+    
     .content-wrapper {
         height: 67vh;
         margin-top: 100px;
         button {
             height: 100px;
         }
+        textarea {
+            height: 40%;
+            font-size: smaller;
+        }
+
+        input{
+            font-size: 1em;
+        }
     }
-    
+}
 } 
