@@ -30,30 +30,34 @@ handleChange(event) {
 
 handleLogin(event) {
     event.preventDefault()
+    Cookies.get("username")
     if (this.state.username === "" || this.state.password === "") {
         this.setState({ errorText: "All fields are required" })
     } else {
         fetch("https://know-taste-like-home-back-jrt.herokuapp.com/user/verified", {
                 method: "POST",
-                headers: { "content-type": "application/json" },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     username: this.state.username,
                     password: this.state.password
                 })
         })
         .then(response => {
-            response.json()
+           return response.json()
         })
         .then(data => {
-           
+            
+           console.log(data)
+          
             if (data === "User NOT Verified") {
                 this.setState({ errorText: "User NOT Verified" })
             }
-            else {
-                this.setState({ errorText: "User IS Logged In"})
+            else  {
+                
+                this.setState({ errorText: "User Verified"})
                 Cookies.set("username", this.state.username)
                 window.location.reload()
-               
+                
             }
         })
         .catch(error => {
