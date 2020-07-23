@@ -47,7 +47,6 @@ export default class Signup extends Component {
                 }
                 else {
                     this.setState({ errorText: "User Created Successfully" })
-                    // Cookies.set("username", this.state.username)
                     this.props.history.push("/login")
                 }
             })
@@ -91,8 +90,7 @@ export default class Signup extends Component {
                           onChange={this.handleChange}
                     /> 
                           
-                   {/* <div className="error-text">{this.state.errorText}</div> */}
-                 <button style={{color: "darkred", fontWeight: "bold", backgroundColor: "white"}} onClick={this.handleSignup}>{this.state.errorText}</button>
+                <button style={{color: "darkred", fontWeight: "bold", backgroundColor: "white"}} onClick={this.handleSignup}>{this.state.errorText}</button>
                    
                 </div>
                <Footer />

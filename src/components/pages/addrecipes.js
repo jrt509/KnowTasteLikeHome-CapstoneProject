@@ -17,8 +17,6 @@ export default class  extends Component {
         this.handleAddRecipe = this.handleAddRecipe.bind(this)
         
     }
-    
-
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
@@ -118,8 +116,6 @@ export default class  extends Component {
                     >
                         {this.state.errorText}
                     </button>
-                    
-                
                 </div>     
                 <Footer /> 
             </div>

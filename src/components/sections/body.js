@@ -30,25 +30,16 @@ const slider = (
   
 );
 
-
-
-
-
 export default class Body extends Component {
     constructor(props) {
         super(props)
-
-    }
+      }
     
-    
-
     render() {
-    
         return (
             <div className='body-wrapper'>
                 <p className="tab blink">SIGN UP OR LOG IN TO DIGITIZE YOUR RECIPES</p>
                 {slider}
-                
             </div>
         )
     }

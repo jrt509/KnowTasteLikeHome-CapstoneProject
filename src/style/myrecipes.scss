@@ -32,7 +32,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 65vh;
+        height: 100%;
         width: 60%;
         background-color:white;
         margin-bottom: 40px;
@@ -74,13 +74,5 @@
         
     }
 }
-@media screen and (max-width: 780px) {
-    .my-recipes-wrapper {
-        margin-top: 20px;
-        // .render-wrapper {
-        //     // padding-top: 60px;
-            
-        // }
-    }
-}
+
 

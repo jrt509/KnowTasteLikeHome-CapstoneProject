@@ -76,26 +76,7 @@ render() {
     
             <BrowserRouter>
                 {!this.state.login ? logoutNav : loginNav }
-                {/* <ul>
-                   
-                    <li>
-                        <NavLink exact to="/">{<Logo/>}</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/signup">Sign Up</NavLink>
-                    </li>
-                    <li>
-                     <NavLink to="/login">Log In</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/addrecipes">Add Recipes</NavLink>                        
-                    </li>
-                    <li>
-                        <NavLink to="/myrecipes">My Recipes</NavLink>
-                    </li>
-                    <button onClick={this.handleLogout}>Log Out</button>
-
-                </ul> */}
+               
             
                 <Switch>
                     <Route exact path="/" component={HomePage}/>

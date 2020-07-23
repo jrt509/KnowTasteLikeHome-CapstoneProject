@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cookies from 'js-cookie';
 import Footer from '../sections/footer.js';
-import { Redirect } from 'react-router';
+
 
 export default class Login extends Component {
     constructor(props) {
@@ -85,7 +85,7 @@ render() {
                 />
                     
                 <button style={{color: "darkred", fontWeight: "bold"}} onClick={this.handleLogin}>{this.state.errorText}</button>
-                {/* <div className="error-text">{this.state.errorText}</div> */}
+                
             </div>         
             <Footer />      
         </div>
