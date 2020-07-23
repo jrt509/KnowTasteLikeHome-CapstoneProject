@@ -54,7 +54,7 @@ handleLogin(event) {
             }
             else  {
                 
-                // this.setState({ errorText: "User Verified"})
+                this.setState({ errorText: "Logging in..."})
                 Cookies.set("username", this.state.username)
                 window.location.reload()
                 
@@ -75,7 +75,7 @@ render() {
                     id="username-input"
                     name="username" 
                     type="text" 
-                    placeholder="username" 
+                    placeholder="Username" 
                     value={this.state.username} 
                     onChange={this.handleChange}
                 />

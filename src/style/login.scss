@@ -9,6 +9,7 @@
     background-image: url('../../static/assets/images/peas-shrimp.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
 
    
 
@@ -30,7 +31,7 @@
                 
 
         input {
-            height: 20px;
+            height: 17px;
             width: 50%;
             display: flex;
             justify-content: space-around;
@@ -64,10 +65,10 @@
     
         button {
             outline: none;
-            height: 25px;
-            width: 50%;
+            height: 43px;
+            width: 55%;
             margin-top: 10px;
-            border-radius: .3em;
+            border-radius: .4em;
             border: 2px solid darkgray;
             background-color: white;
             -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);

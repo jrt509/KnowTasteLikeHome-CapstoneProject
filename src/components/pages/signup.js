@@ -78,7 +78,7 @@ export default class Signup extends Component {
                           
                    <input name="username" 
                           type="text" 
-                          placeholder="username" 
+                          placeholder="Username" 
                           value={this.state.username} 
                           onChange={this.handleChange}
                     />  
@@ -90,7 +90,7 @@ export default class Signup extends Component {
                           onChange={this.handleChange}
                     /> 
                           
-                <button style={{color: "darkred", fontWeight: "bold", backgroundColor: "white"}} onClick={this.handleSignup}>{this.state.errorText}</button>
+                <button style={{color: "darkred", fontWeight: "bold", backgroundColor: "rgb(224, 224, 224)"}} onClick={this.handleSignup}>{this.state.errorText}</button>
                    
                 </div>
                <Footer />
